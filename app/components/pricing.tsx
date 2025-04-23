@@ -2,7 +2,7 @@
 
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { Button, Card } from "@radix-ui/themes";
-import { LegacyRef, useState } from "react";
+import { useState } from "react";
 import { planConfig } from "../helpers/plan-config";
 import { motion } from "framer-motion";
 import Tabs from "./ui/tabs";

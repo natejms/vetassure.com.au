@@ -3,6 +3,7 @@
 import { Button, Text, TextField, Flex, Badge } from "@radix-ui/themes";
 import Image from "next/image";
 import { useState } from "react";
+import { MailingListSignUp } from "./emails/mailing-list-sign-up";
 
 const statLinks = [
   {
@@ -29,21 +30,30 @@ const images = ["/audit-inplace.png", "/trainer-management.png"];
 
 export default function LandingPage2() {
   const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [sending, setSending] = useState(false);
+  const [signUpComplete, setSignUpComplete] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSending(true);
 
     const res = await fetch("/api/join", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email, firstName, lastName }),
     });
 
     if (res.ok) {
-      alert("Thanks for signing up!");
       setEmail("");
+      setFirstName("");
+      setLastName("");
+      setSending(false);
+      setSignUpComplete(true);
     } else {
       alert("Something went wrong. Please try again later.");
+      setSending(false);
     }
   };
 
@@ -66,22 +76,44 @@ export default function LandingPage2() {
           </Text>
         </Flex>
 
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col sm:flex-row gap-3 max-w-md"
-        >
-          <TextField.Root
-            type="email"
-            placeholder="Enter your email"
-            required
-            className="w-full"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <Button type="submit" className="px-6 py-2 bg-accent text-white">
-            Notify Me
-          </Button>
-        </form>
+        {signUpComplete ? (
+          <div>Thanks!</div>
+        ) : (
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row gap-3 max-w-md w-full"
+          >
+            <Flex direction={"column"} gap={"2"} className="w-full">
+              <TextField.Root
+                type="text"
+                placeholder="First name"
+                required
+                className="w-full"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
+              <TextField.Root
+                type="text"
+                placeholder="Last name"
+                required
+                className="w-full"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+              <TextField.Root
+                type="email"
+                placeholder="Email"
+                required
+                className="w-full"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <Button type="submit" className="px-6 py-2 bg-accent text-white">
+                Notify Me
+              </Button>
+            </Flex>
+          </form>
+        )}
 
         <Text size={"3"} weight={"medium"}>
           Why we are here

@@ -1,5 +1,6 @@
 import { Badge, Link, Text } from "@radix-ui/themes";
 import { MailIcon, SparklesIcon } from "lucide-react";
+import Image from "next/image";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FiYoutube } from "react-icons/fi";
 
@@ -43,9 +44,11 @@ export default function Footer() {
             <div className="flex lg:flex-1">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">VETAssure</span>
-                <img
+                <Image
                   alt="VETAssure logo"
                   src="/va-logo.svg"
+                  width={"32"}
+                  height={"32"}
                   className="h-8 w-auto"
                 />
               </a>

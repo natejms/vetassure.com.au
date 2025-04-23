@@ -3,6 +3,7 @@
 import { Button, Flex, Text, TextField } from "@radix-ui/themes";
 import { useState } from "react";
 import PreviewCollage from "./preview-collage";
+import Image from "next/image";
 
 const images = [
   "/audit-inplace.png",
@@ -79,7 +80,13 @@ export default function LandingPage() {
         className="z-10 relative bg-white/20 backdrop-blur-md shadow-lg p-8 rounded-2xl border border-white/30 max-w-xl w-full"
       >
         <Flex gap="2" align="center" justify="center">
-          <img alt="" src="va-logo.svg" className="h-12 w-auto" />
+          <Image
+            width={"48"}
+            height={"48"}
+            alt=""
+            src="va-logo.svg"
+            className="h-12 w-auto"
+          />
           <Text size="8" weight="medium" color="iris">
             launching soon
           </Text>

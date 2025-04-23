@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Theme } from "@radix-ui/themes";
-import LandingPage from "./components/landing-page";
 import LandingPage2 from "./components/landing-page-2";
 
 const geistSans = Geist({

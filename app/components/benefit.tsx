@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Benefits() {
   return (
     <div className="space-y-6 mx-auto flex flex-col max-w-[1600px] py-20">
@@ -12,9 +14,11 @@ export default function Benefits() {
         <div className="relative lg:col-span-3">
           <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]" />
           <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]">
-            <img
+            <Image
               alt=""
-              src="cpi2.png"
+              src="/cpi2.png"
+              width={"600"}
+              height={"200"}
               className="h-80 object-cover object-left"
             />
             <div className="p-10 pt-4">
@@ -36,9 +40,11 @@ export default function Benefits() {
         <div className="relative lg:col-span-3">
           <div className="absolute inset-px rounded-lg bg-white lg:rounded-tr-[2rem]" />
           <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]">
-            <img
+            <Image
               alt=""
-              src="schedule.png"
+              src="/schedule.png"
+              width={"600"}
+              height={"200"}
               className="h-80 object-cover object-left lg:object-right"
             />
             <div className="p-10 pt-4">
@@ -60,9 +66,11 @@ export default function Benefits() {
         <div className="relative lg:col-span-2">
           <div className="absolute inset-px rounded-lg bg-white lg:rounded-bl-[2rem]" />
           <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]">
-            <img
+            <Image
               alt=""
-              src="matrix3.png"
+              src="/matrix3.png"
+              width={"600"}
+              height={"200"}
               className="h-80 object-cover object-left"
             />
             <div className="p-10 pt-4">
@@ -84,9 +92,11 @@ export default function Benefits() {
         <div className="relative lg:col-span-2">
           <div className="absolute inset-px rounded-lg bg-white" />
           <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
-            <img
+            <Image
               alt=""
-              src="https://tailwindcss.com/plus-assets/img/component-images/bento-01-integrations.png"
+              width={"600"}
+              height={"200"}
+              src="/matrix3.png"
               className="h-80 object-cover"
             />
             <div className="p-10 pt-4">
@@ -108,9 +118,11 @@ export default function Benefits() {
         <div className="relative lg:col-span-2">
           <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]" />
           <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]">
-            <img
+            <Image
               alt=""
-              src="https://tailwindcss.com/plus-assets/img/component-images/bento-01-network.png"
+              width={"600"}
+              height={"200"}
+              src="/matrix3.png"
               className="h-80 object-cover"
             />
             <div className="p-10 pt-4">
