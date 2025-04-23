@@ -1,6 +1,5 @@
 import {
   Section,
-  Img,
   Text,
   Row,
   Column,

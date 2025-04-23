@@ -51,8 +51,8 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
             className="space-y-6"
           >
             <div className="text-h5 text-secondary font-medium max-w-lg">
-              VETAssure's compliance management suite takes the guess work out
-              of your organisation's regulatory compliance.
+              VETAssure&apos;s compliance management suite takes the guess work
+              out of your organisation&apos;s regulatory compliance.
             </div>
             <div className="space-y-2 text-body-large">
               <div className="flex items-center gap-2">
@@ -100,7 +100,7 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
               <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
                 <Image
                   alt="App screenshot"
-                  src="audits-screen.png"
+                  src="/audits-screen.png"
                   width={750}
                   height={500}
                   className="rounded-md shadow-2xl ring-1 ring-gray-900/10"

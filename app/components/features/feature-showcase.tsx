@@ -1,12 +1,25 @@
 import { motion } from "framer-motion";
 import { Button, Flex, Text } from "@radix-ui/themes";
 import { CheckCircle } from "lucide-react";
+import Image from "next/image";
+
+type FeatureShowcaseType = {
+  name: string;
+  description: string;
+  includes?: string[];
+  imgSrc: string;
+  imgAlt: string;
+  testimonial?: {
+    description: string;
+    author: string;
+  };
+};
 
 export function FeatureShowcase({
   feature,
   flip = false,
 }: {
-  feature: any;
+  feature: FeatureShowcaseType;
   flip?: boolean;
 }) {
   return (
@@ -19,10 +32,12 @@ export function FeatureShowcase({
           transition={{ duration: 0.6 }}
           className={`relative ${flip ? "lg:order-last" : ""}`}
         >
-          <div className="relative rounded-2xl shadow-xl overflow-hidden ring-1 ring-gray-300">
-            <img
+          <div className="relative rounded-2xl shadow-xl overflow-hidden">
+            <Image
               src={feature.imgSrc}
               alt={feature.imgAlt}
+              width={500}
+              height={500}
               className="w-full h-auto object-cover"
             />
           </div>

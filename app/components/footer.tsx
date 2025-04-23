@@ -55,8 +55,8 @@ export default function Footer() {
             </div>
             <div className="max-w-sm">
               <Text color="gray" size={"2"}>
-                VETAssure's compliance management suite takes the guesswork out
-                of your organisation's regulatory compliance.
+                VETAssure&apos;s compliance management suite takes the guesswork
+                out of your organisation&apos;s regulatory compliance.
               </Text>
             </div>
             <div className="flex gap-3 mb-6">

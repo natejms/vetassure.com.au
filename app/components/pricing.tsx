@@ -2,7 +2,7 @@
 
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { Button, Card } from "@radix-ui/themes";
-import { useState } from "react";
+import { LegacyRef, useState } from "react";
 import { planConfig } from "../helpers/plan-config";
 import { motion } from "framer-motion";
 import Tabs from "./ui/tabs";
@@ -23,36 +23,23 @@ export default function PricingTable() {
   const [proParent] = useAutoAnimate();
 
   const renderFeatures = (
-    features: any[],
+    features: { label: string; included: boolean }[],
     _plan: string,
     parentRef: LegacyRef<HTMLUListElement> | undefined
   ) => {
     return (
-      <>
-        {/* Attach ref to the ul element */}
-        <ul className="space-y-2 text-body-large text-lightSub" ref={parentRef}>
-          {features
-            // .slice(0, showMore ? features.length : 3)
-            .map((feature, index) => (
-              <li key={index} className="flex items-center gap-2 ">
-                {Object.values(feature)[0] ? (
-                  <CheckIcon className="size-5 text-accent" />
-                ) : (
-                  <MinusIcon className="size-5 text-neutral-500" />
-                )}
-                {Object.keys(feature)[0]}
-              </li>
-            ))}
-        </ul>
-        {/* {features.length > 3 && (
-          <Button
-            onClick={() => toggleShowMore(plan)}
-            className="!bg-accent/10 !text-accent"
-          >
-            {showMore ? "Show less" : "Show more"}
-          </Button>
-        )} */}
-      </>
+      <ul className="space-y-2 text-body-large text-lightSub" ref={parentRef}>
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-center gap-2">
+            {feature.included ? (
+              <CheckIcon className="size-5 text-accent" />
+            ) : (
+              <MinusIcon className="size-5 text-neutral-500" />
+            )}
+            {feature.label}
+          </li>
+        ))}
+      </ul>
     );
   };
 

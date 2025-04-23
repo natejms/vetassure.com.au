@@ -22,8 +22,8 @@ export const MailingListSignUp = ({ firstName }: MailingListSignUpProps) => (
         Hey {firstName}, welcome to VETAssure
       </Heading>
       <Text>
-        Thank you for joining the waitlist! We can't wait to show you what we
-        have been working on. We will reach out in May to get started!
+        Thank you for joining the waitlist! We can&apos;t wait to show you what
+        we have been working on. We will reach out in May to get started!
       </Text>
       <Heading className="text-xl font-medium">A little back story</Heading>
       <Heading className="text-sm font-medium">
@@ -60,9 +60,9 @@ export const MailingListSignUp = ({ firstName }: MailingListSignUpProps) => (
         managed reactively.
       </Text>
       <Text>
-        But it shouldn't be that way. We created VETAssure to make compliance
-        easier, clearer, and more accessible — transforming it from a stressor
-        into a strength.
+        But it shouldn&apos;t be that way. We created VETAssure to make
+        compliance easier, clearer, and more accessible — transforming it from a
+        stressor into a strength.
       </Text>
       <Heading className="text-sm font-medium">🎯 Our goal is simple:</Heading>
       <Text>✅ Streamline and automate compliance processes</Text>

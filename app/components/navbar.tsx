@@ -25,6 +25,7 @@ import {
   Tv,
   X,
 } from "lucide-react";
+import Image from "next/image";
 
 const products = [
   {
@@ -103,10 +104,16 @@ export default function Navbar({
         className="mx-auto flex max-w-[1600px] items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img alt="" src="/va-logo.svg" className="h-8 w-auto" />
-          </a>
+            <Image
+              alt=""
+              width={32}
+              height={32}
+              src="/va-logo.svg"
+              className="h-8 w-auto"
+            />
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -152,13 +159,13 @@ export default function Navbar({
                             className="size-6 text-gray-600 group-hover:text-accent"
                           />
                         </div>
-                        <a
+                        <Link
                           href={item.href}
                           className="mt-6 block font-semibold text-gray-900"
                         >
                           {item.name}
                           <span className="absolute inset-0" />
-                        </a>
+                        </Link>
                         <p className="mt-1 text-gray-600">{item.description}</p>
                       </div>
                     ))}
@@ -167,7 +174,7 @@ export default function Navbar({
                     <div className="mx-auto max-w-[1600px] px-6 lg:px-8">
                       <div className="grid grid-cols-3 divide-x divide-gray-900/5 border-x border-gray-900/5">
                         {callsToAction.map((item) => (
-                          <a
+                          <Link
                             key={item.name}
                             href={item.href}
                             className="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-gray-900 hover:bg-gray-100"
@@ -177,7 +184,7 @@ export default function Navbar({
                               className="size-5 flex-none text-gray-400"
                             />
                             {item.name}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -199,9 +206,9 @@ export default function Navbar({
           >
             Pricing
           </div>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
+          <Link href="#" className="text-sm/6 font-semibold text-gray-900">
             Company
-          </a>
+          </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-2">
           <Link href="https://stg.vetassure.com.au">
@@ -220,10 +227,16 @@ export default function Navbar({
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img alt="" src="va-logo.svg" className="h-8 w-auto" />
-            </a>
+              <Image
+                width={32}
+                height={32}
+                alt=""
+                src="va-logo.svg"
+                className="h-8 w-auto"
+              />
+            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
@@ -257,32 +270,32 @@ export default function Navbar({
                     ))}
                   </DisclosurePanel>
                 </Disclosure>
-                <a
+                <Link
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Features
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Marketplace
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Company
-                </a>
+                </Link>
               </div>
               {/* <div className="py-6">
-                <a
+                <Link
                   href="stg.vetassure.com.au"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Log in
-                </a>
+                </Link>
               </div> */}
             </div>
           </div>

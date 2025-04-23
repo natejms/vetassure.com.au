@@ -1,9 +1,10 @@
 "use client";
 
 import { Button, Text, TextField, Flex, Badge } from "@radix-ui/themes";
+import { Loader2 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
-import { MailingListSignUp } from "./emails/mailing-list-sign-up";
 
 const statLinks = [
   {
@@ -65,14 +66,21 @@ export default function LandingPage2() {
       {/* Left: Form + Text */}
       <div className="z-10 max-w-xl text-left space-y-6">
         <Badge>Launching May 2025</Badge>
-        <img alt="" src="/va-logo.svg" className="h-10 mb-4" />
+        <Image
+          width={40}
+          height={40}
+          alt=""
+          src="/va-logo.svg"
+          className="h-10 mb-4"
+        />
         <Flex direction={"column"} gap={"4"}>
           <Text size="8" weight="medium">
             Goodbye spreadsheets, hello compliance.
           </Text>
           <Text color="gray" className="max-w-md">
-            VETAssure's compliance management suite takes the guess work out of
-            your organisation's regulatory compliance. Get notified at launch.
+            VETAssure&apos;s compliance management suite takes the guess work
+            out of your organisation&apos;s regulatory compliance. Get notified
+            at launch.
           </Text>
         </Flex>
 
@@ -109,7 +117,8 @@ export default function LandingPage2() {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <Button type="submit" className="px-6 py-2 bg-accent text-white">
-                Notify Me
+                {sending && <Loader2 className="animate-spin size-4" />} Notify
+                Me
               </Button>
             </Flex>
           </form>
@@ -121,14 +130,14 @@ export default function LandingPage2() {
         <ul className="space-y-3 pt-4 text-sm text-gray-600">
           {statLinks.map((fact, i) => (
             <li key={i}>
-              <a
+              <Link
                 href={fact.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
               >
                 <strong>{fact.title}</strong> — {fact.description}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

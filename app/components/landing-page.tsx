@@ -92,8 +92,8 @@ export default function LandingPage() {
           </Text>
         </Flex>
         <Text color="gray" className="max-w-lg mx-auto">
-          We're working hard to bring you the best compliance platform for RTOs.
-          Get notified when we launch.
+          We&apos;re working hard to bring you the best compliance platform for
+          RTOs. Get notified when we launch.
         </Text>
         <form
           onSubmit={handleSubmit}
