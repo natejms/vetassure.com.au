@@ -13,11 +13,20 @@ interface MailingListSignUpProps {
   firstName: string;
 }
 
+const baseUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "";
+
 export const MailingListSignUp = ({ firstName }: MailingListSignUpProps) => (
   <Tailwind>
     <Preview>Welcome to VETAssure - What is VETAssure?</Preview>
     <Container>
-      <Img src={`/icon.svg`} width="75" height="75" alt="VETAssure" />
+      <Img
+        src={`${baseUrl}/static/va-logo.png`}
+        width="75"
+        height="75"
+        alt="VETAssure"
+      />
       <Heading className="text-2xl font-medium">
         Hey {firstName}, welcome to VETAssure
       </Heading>
