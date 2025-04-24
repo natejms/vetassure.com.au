@@ -46,10 +46,13 @@ export default function LandingPage2() {
   const [lastName, setLastName] = useState("");
   const [sending, setSending] = useState(false);
   const [signUpComplete, setSignUpComplete] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [rateLimitMessage, setRateLimitMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
+    setErrorMessage(""); // reset error message
 
     const token = window.turnstile?.getResponse();
 
@@ -59,6 +62,18 @@ export default function LandingPage2() {
       body: JSON.stringify({ email, firstName, lastName, token }),
     });
 
+    if (res.status === 409) {
+      setErrorMessage("Oops! You've already joined the mailing list.");
+      setSending(false);
+      return;
+    }
+
+    if (res.status === 429) {
+      setRateLimitMessage("Too many requests. Please try again later.");
+      setSending(false);
+      return;
+    }
+
     if (res.ok) {
       setEmail("");
       setFirstName("");
@@ -66,7 +81,7 @@ export default function LandingPage2() {
       setSending(false);
       setSignUpComplete(true);
     } else {
-      alert("Something went wrong. Please try again later.");
+      setErrorMessage("Something went wrong. Please try again later.");
       setSending(false);
     }
   };
@@ -112,6 +127,22 @@ export default function LandingPage2() {
               notified at launch.
             </Text>
           </Flex>
+
+          {errorMessage && (
+            <div className="inline-flex">
+              <Callout.Root color="green">
+                <Callout.Text>{errorMessage}</Callout.Text>
+              </Callout.Root>
+            </div>
+          )}
+
+          {rateLimitMessage && (
+            <div className="inline-flex">
+              <Callout.Root color="red">
+                <Callout.Text>{rateLimitMessage}</Callout.Text>
+              </Callout.Root>
+            </div>
+          )}
 
           {signUpComplete ? (
             <Callout.Root>

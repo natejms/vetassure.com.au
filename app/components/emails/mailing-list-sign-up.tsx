@@ -21,8 +21,8 @@ export const MailingListSignUp = ({ firstName }: MailingListSignUpProps) => (
     <Container>
       <Img
         src={`${baseUrl}/static/va-logo.svg`}
-        width="75"
-        height="75"
+        width="150"
+        height="150"
         alt="VETAssure"
       />
       <Heading className="text-2xl font-medium">

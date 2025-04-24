@@ -4,6 +4,7 @@ import { NextRequest } from "next/server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const AUDIENCE_ID = "dedbf23e-41ce-4344-9f65-233a18c168a5";
 
 export async function POST(req: NextRequest) {
   // Rate limit
@@ -11,11 +12,14 @@ export async function POST(req: NextRequest) {
   const ip = forwardedFor?.split(",")[0]?.trim() || "unknown";
 
   if (isRateLimited(ip)) {
-    return new Response(JSON.stringify({ error: "Rate limit exceeded" }));
+    return new Response(JSON.stringify({ error: "Rate limit exceeded" }), {
+      status: 429,
+    });
   }
 
   const { email, firstName, lastName, token } = await req.json();
 
+  // Verify CloudFlare Turnstile
   const turnstileRes = await fetch(
     "https://challenges.cloudflare.com/turnstile/v0/siteverify",
     {
@@ -39,6 +43,21 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  // Fetch audience
+  const audienceRes = await resend.contacts.list({
+    audienceId: AUDIENCE_ID,
+  });
+
+  const contactList = audienceRes?.data?.data;
+  const existing = contactList?.find((c) => c.email === email);
+
+  if (existing) {
+    return new Response(JSON.stringify({ error: "You have already joined!" }), {
+      status: 409,
+    });
+  }
+
+  // Process new mailing list join
   try {
     const { data, error } = await resend.emails.send({
       from: "VETAssure <nathan@vetassure.com.au>",
