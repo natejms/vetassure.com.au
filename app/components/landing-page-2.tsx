@@ -67,8 +67,8 @@ export default function LandingPage2() {
       <div className="z-10 max-w-xl text-left space-y-6">
         <Badge>Launching May 2025</Badge>
         <Image
-          width={40}
-          height={40}
+          width={200}
+          height={200}
           alt=""
           src="/va-logo.svg"
           className="h-10 mb-4"
