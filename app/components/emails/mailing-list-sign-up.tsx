@@ -22,7 +22,7 @@ export const MailingListSignUp = ({ firstName }: MailingListSignUpProps) => (
     <Preview>Welcome to VETAssure - What is VETAssure?</Preview>
     <Container>
       <Img
-        src={`${baseUrl}/static/va-logo.png`}
+        src={`${baseUrl}/static/va-logo.svg`}
         width="75"
         height="75"
         alt="VETAssure"
