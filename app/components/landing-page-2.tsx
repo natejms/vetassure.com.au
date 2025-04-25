@@ -21,18 +21,21 @@ const statLinks = [
     description:
       "Most were due to administrative/documentation gaps — not training quality.",
     link: "https://www.asqa.gov.au/sites/default/files/2025-01/ASQA%20Regulation%20Report%20Q1-2%20December%202024.pdf#page=9",
+    reference: "ASQA - Q1-2 2024-25 Regulation Report FINAL",
   },
   {
     title: "ASQA received 1,485 tip-offs last year",
     description:
       "Including falsified records, non-genuine providers, and misconduct.",
     link: "https://www.asqa.gov.au/sites/default/files/2025-01/ASQA%20Regulation%20Report%20Q1-2%20December%202024.pdf#page=8",
+    reference: "ASQA - Q1-2 2024-25 Regulation Report FINAL",
   },
   {
     title: "ASQA recommends proactive self-assurance practices",
     description:
       "Providers are encouraged to systematically evaluate and improve their operations—not just rely on audits.",
     link: "https://www.asqa.gov.au/how-we-regulate/self-assurance-0/self-assurance-through-standards",
+    reference: "ASQA - Self-assurance through the Standards",
   },
 ];
 
@@ -204,7 +207,11 @@ export default function LandingPage2() {
                   className="hover:underline"
                 >
                   <strong>{fact.title}</strong> — {fact.description}
+                  <br />
                 </Link>
+                <Text size={"1"} color="gray" className="italic">
+                  Source: {fact.reference}
+                </Text>
               </li>
             ))}
           </ul>
