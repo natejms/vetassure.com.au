@@ -42,14 +42,14 @@ export const MailingListSignUp = ({ firstName }: MailingListSignUpProps) => (
         be this hard?”
       </Text>
       <Heading className="text-sm font-medium">
-        📝 2019 - Planning began
+        📝 2020 - Planning began
       </Heading>
       <Text>
         We began mapping out a smarter, more supportive solution to help RTOs
         feel more confident in their operations, not fearful of audits.
       </Text>
       <Heading className="text-sm font-medium">
-        🙌 2021 - 2024 - We built. We tested. We built again.
+        🙌 2022 - 2025 - We built. We tested. We built again.
       </Heading>
       <Text>
         Over three years, we poured everything into building VETAssure — a tool
@@ -84,7 +84,3 @@ export const MailingListSignUp = ({ firstName }: MailingListSignUpProps) => (
     </Container>
   </Tailwind>
 );
-
-MailingListSignUp.PreviewProps = {
-  firstName: "Nathan",
-} as MailingListSignUpProps;
