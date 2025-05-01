@@ -20,10 +20,11 @@ export const MailingListSignUp = ({ firstName }: MailingListSignUpProps) => (
     <Preview>Welcome to VETAssure - What is VETAssure?</Preview>
     <Container>
       <Img
-        src={`${baseUrl}/static/va-logo.svg`}
+        src={`${baseUrl}/static/va-logo.png`}
         width="150"
         height="150"
         alt="VETAssure"
+        style={{ display: "block", margin: "0 auto" }}
       />
       <Heading className="text-2xl font-medium">
         Hey {firstName}, welcome to VETAssure
