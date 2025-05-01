@@ -1,4 +1,4 @@
-import { MailingListSignUp } from "../app/components/emails/mailing-list-sign-up";
+import { MailingListSignUp } from "../components/emails/mailing-list-sign-up";
 
 export default function Email() {
   return (
