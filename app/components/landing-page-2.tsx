@@ -112,7 +112,7 @@ export default function LandingPage2() {
         />
         {/* Left: Form + Text */}
         <div className="z-10 max-w-xl text-left space-y-6">
-          <Badge>Launching May 2025</Badge>
+          <Badge>Coming Soon</Badge>
           <Image
             width={200}
             height={200}

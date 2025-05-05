@@ -21,8 +21,8 @@ export const planConfig = {
   essentialsPlus: {
     title: "Essentials Plus",
     price: {
-      monthly: 329,
-      annually: 264,
+      monthly: 429,
+      annually: 344,
     },
     features: [
       { label: "Up to 5 users", included: true },
@@ -44,7 +44,7 @@ export const planConfig = {
       annually: 679,
     },
     features: [
-      { label: "Up to 15 users", included: true },
+      { label: "Up to 10 users", included: true },
       { label: "Unlimited active audits", included: true },
       { label: "All audit templates", included: true },
       { label: "Calendar and scheduling", included: true },

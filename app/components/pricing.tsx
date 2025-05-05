@@ -52,7 +52,7 @@ export default function PricingTable() {
         initial={{ y: -50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{
-          margin: "-200px",
+          margin: "-50px",
         }}
         transition={{ duration: 0.7 }}
         className="space-y-4"

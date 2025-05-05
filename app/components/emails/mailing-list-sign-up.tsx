@@ -31,7 +31,8 @@ export const MailingListSignUp = ({ firstName }: MailingListSignUpProps) => (
       </Heading>
       <Text>
         Thank you for joining the waitlist! We can&apos;t wait to show you what
-        we have been working on. We will reach out in May to get started!
+        we have been working on. We will be in touch soon with more details on
+        how to get started!
       </Text>
       <Heading className="text-xl font-medium">A little back story</Heading>
       <Heading className="text-sm font-medium">
